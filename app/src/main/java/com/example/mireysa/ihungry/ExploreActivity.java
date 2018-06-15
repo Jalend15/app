@@ -39,5 +39,17 @@ public class ExploreActivity extends AppCompatActivity {
 
             }
         });
+
+        // Set onClickListeners for Buttons
+        visitFavoriteLocationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // Directs user to MilesActivity
+                Intent intent = new Intent(ExploreActivity.this, FavoriteActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 }

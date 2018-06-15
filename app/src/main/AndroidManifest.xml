@@ -36,6 +36,9 @@
         <activity android:name=".MealActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".FavoriteActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>
