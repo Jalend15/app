@@ -1,6 +1,8 @@
 package com.example.mireysa.ihungry;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
@@ -35,6 +37,16 @@ public class MealActivity extends AppCompatActivity {
             milesDesired.setText(mileMessage);
         }
 
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle("Awesome");
+        alertDialog.setMessage("You have selected the miles you wish to travel, now select the meal type");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
 
     }
 }
