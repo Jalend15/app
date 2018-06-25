@@ -42,8 +42,8 @@ public class FetchData extends AsyncTask<String,listItem,Void> {
         StringBuilder builder = new StringBuilder();
 
         // Set Foursquare API Keys
-        final String CLIENT_ID="";
-        final String CLIENT_PASSWORD="";
+        final String CLIENT_ID="141W4JNRKQRNCETDIKNP3CQSNY5YV1N3VXOEJYQ1MSOEY5NJ";
+        final String CLIENT_PASSWORD="WFPTH0UWNJWDSC0ZXKERP3TAMICR3YXXPH0PF1UH2SOMK1I0";
 
         // Coordinates of Miami Dade College Wolfson Campus (for Testing Purposes)
         final String Latitude = "25.777657";
