@@ -1,11 +1,24 @@
 package com.example.mireysa.ihungry;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 // MealActivity serves as the interface to select whether the user desires Breakfast, Lunch, Dinner, etc.
@@ -13,7 +26,10 @@ import android.widget.TextView;
 public class MealActivity extends AppCompatActivity {
 
     private TextView milesDesired;
-
+    private ListView listView;
+    private MealAdapter mAdapter;
+    String query;
+    String meal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +53,42 @@ public class MealActivity extends AppCompatActivity {
             milesDesired.setText(mileMessage);
         }
 
-        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("Awesome");
-        alertDialog.setMessage("You have selected the miles you wish to travel, now select the meal type");
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        alertDialog.show();
+
+        listView = (ListView) findViewById(R.id.mealTypeList);
+        final ArrayList<MealType> mealType = new ArrayList<>();
+
+        // Create Meal Types
+        mealType.add(new MealType("Breakfast"));
+        mealType.add(new MealType("Lunch"));
+        mealType.add(new MealType("Dinner"));
+        mealType.add(new MealType("Snack"));
+
+        // Set Adapter
+        mAdapter = new MealAdapter(this, mealType);
+        listView.setAdapter(mAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                //CustomListItem singleListItem = (CustomListItem) listView.getItemAtPosition(position);
+                MealType mItem = (MealType) listView.getItemAtPosition(position);
+
+                // Obtain Meal Type
+                meal = mItem.getmealType();
+
+                //Directs user to next activity:
+                Intent intent = new Intent(MealActivity.this, ResultsActivity.class);
+
+                // Insert Values to Pass to Next Activity
+                intent.putExtra("meal", meal);
+
+                // Begin Intent
+                startActivity(intent);
+            }
+        });
 
     }
+
+
 }

@@ -42,6 +42,9 @@
         <activity android:name=".FavoriteActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".ResultsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>
