@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class listAdapter extends ArrayAdapter<listItem> {
@@ -23,9 +22,9 @@ public class listAdapter extends ArrayAdapter<listItem> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(convertView == null) {
+        if (convertView == null) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            convertView = layoutInflater.inflate(R.layout.list_item,parent,false);
+            convertView = layoutInflater.inflate(R.layout.list_item, parent, false);
         }
 
         // Convert Views

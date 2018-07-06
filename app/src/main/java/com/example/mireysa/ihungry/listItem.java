@@ -1,7 +1,5 @@
 package com.example.mireysa.ihungry;
 
-import android.graphics.Bitmap;
-
 public class listItem {
 
     // List View - - -  Provide Brief Details of Location - - - - - - - -
@@ -53,9 +51,8 @@ public class listItem {
     private String photoOfLocation;
 
 
-
     // Constructor
-    public listItem(String idOfLocation ,String nameOfLocation, String addressOfLocation, Double latOfLocation, Double longOfLocation, int distanceOfLocation, String categoryOfLocation) {
+    public listItem(String idOfLocation, String nameOfLocation, String addressOfLocation, Double latOfLocation, Double longOfLocation, int distanceOfLocation, String categoryOfLocation) {
         this.idOfLocation = idOfLocation;
         this.nameOfLocation = nameOfLocation;
         this.addressOfLocation = addressOfLocation;

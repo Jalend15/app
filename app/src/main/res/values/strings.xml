@@ -10,5 +10,6 @@
     <string name="checkbox">com.example.mireysa.ihungry.checkbox</string>
     <string name="username">com.example.mireysa.ihungry.username</string>
     <string name="password">com.example.mireysa.ihungry.password</string>
+    <string name="tag_decision">Decision</string>
 
 </resources>

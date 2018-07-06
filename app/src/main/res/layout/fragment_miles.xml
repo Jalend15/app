@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MilesFragment">
 
     <RelativeLayout
         android:id="@+id/empty_view"
+        android:paddingTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:paddingTop="20dp">
+        android:layout_centerInParent="true">
 
 
         <TextView
             android:id="@+id/location_select"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-medium"
             android:paddingTop="165dp"
-            android:text="Would you like to visit a favorite location or explore a new place?"
-            android:textAlignment="center"
+            android:text="How Many Miles are You Willing to Travel?"
             android:textAppearance="?android:textAppearanceMedium" />
 
         <TextView
@@ -28,20 +29,20 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/location_select"
             android:layout_centerHorizontal="true"
+            android:textAlignment="center"
             android:fontFamily="sans-serif"
             android:paddingTop="8dp"
-            android:text="Click on the Button to get Started"
+            android:text="Use the slider to select your preference and Press 'Confirm' when you're done"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="#A2AAB0" />
-
-
     </RelativeLayout>
 
+
     <LinearLayout
+        android:paddingTop="350dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="350dp">
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -49,16 +50,26 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <Button
-                android:id="@+id/visitFavoriteLocationButton"
+            <SeekBar
+                android:id="@+id/mileSeekBar"
+                android:layout_width="331dp"
+                android:layout_height="21dp"
+                android:max="50"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/mileTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:background="@color/colorButton"
-                android:padding="10dp"
-                android:text="Favorite Location"
-                android:textAlignment="center"
-                android:textColor="#fff" />
+                android:text="0"
+                android:layout_centerInParent="true" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -68,18 +79,18 @@
             android:padding="5dp">
 
             <Button
-                android:id="@+id/exploreLocationButton"
+                android:id="@+id/confirmMileButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
                 android:background="@color/colorButton"
                 android:padding="10dp"
-                android:text="Explore a New Place"
-                android:textColor="#fff" />
+                android:text="Confirm"
+                android:textColor="#fff"
+                android:layout_centerInParent="true" />
         </RelativeLayout>
 
 
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>
