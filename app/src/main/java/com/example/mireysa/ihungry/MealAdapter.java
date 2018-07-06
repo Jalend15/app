@@ -20,7 +20,7 @@ public class MealAdapter extends ArrayAdapter<MealType> {
     private List<MealType> mealTypeList = new ArrayList<>();
 
     public MealAdapter(@NonNull Context context, @SuppressLint("SupportAnnotationUsage") @LayoutRes ArrayList<MealType> list) {
-        super(context, 0 , list);
+        super(context, 0, list);
         mContext = context;
         mealTypeList = list;
     }
@@ -29,8 +29,8 @@ public class MealAdapter extends ArrayAdapter<MealType> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listItem = convertView;
-        if(listItem == null)
-            listItem = LayoutInflater.from(mContext).inflate(R.layout.simple_list_item,parent,false);
+        if (listItem == null)
+            listItem = LayoutInflater.from(mContext).inflate(R.layout.simple_list_item, parent, false);
 
         MealType currentMealType = mealTypeList.get(position);
 

@@ -22,30 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".ExploreActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
         <!-- Parent activity meta-data to support 4.0 and lower -->
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity" />
 
         <activity
-            android:name=".MilesActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".MealActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".FavoriteActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".ResultsActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".AccountActivity"
+            android:name=".ContentActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
     </application>

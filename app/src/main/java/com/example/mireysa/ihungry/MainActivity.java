@@ -1,27 +1,20 @@
 package com.example.mireysa.ihungry;
 
-import android.app.Dialog;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 // iHungry serves as an app that assists users in finding a location where they would eat depending on their preferences
 
 public class MainActivity extends AppCompatActivity {
+
+
+    private Button exploreBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +23,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Add Intent to Floating Action Button
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        exploreBtn = (Button) findViewById(R.id.exploreButton);
+
+        // Add Intent to Explore Button
+        exploreBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                // Begin Intent
-                Intent intent = new Intent(MainActivity.this, ExploreActivity.class);
+                // Begin Intent to New Activity
+                Intent intent = new Intent(MainActivity.this, ContentActivity.class);
                 startActivity(intent);
 
             }
@@ -54,9 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -65,9 +57,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_login) {
-            // Begin Intent
-            Intent intent = new Intent(MainActivity.this, AccountActivity.class);
-            startActivity(intent);
+
         }
 
         return super.onOptionsItemSelected(item);
