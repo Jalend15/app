@@ -3,9 +3,11 @@ package com.example.mireysa.ihungry;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -42,8 +44,9 @@ public class ResultsFragment extends Fragment {
             // mealMessage serves as query for FetchData
             new FetchData(this).execute(mealMessage);
 
-
         }
+
+
 
         return view;
     }
